@@ -1,0 +1,15 @@
+{% if role|string() == "student" %}
+	{% if page|string() == "annotate" %}
+	  {% include "annotate.html" %}
+	{% elif page|string() == "diagram" %}
+	   {% include "diagram.html" %}
+	{% elif page|string() == "write" %}
+	   {% include "write.html" %}
+	{% endif %}
+{% elif role|string() == "teacher" %}
+    {% if page|string() == "upload" %}
+	  {% include "upload.html" %}
+	{% elif page|string() == "view" %}
+	    {% include "view.html" %}
+	{% endif %}
+{% endif %}

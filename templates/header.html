@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- <meta http-equiv="refresh" content="5"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>ArguPod</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/static/css/dashboard.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/static/css/annotator.min.css">
+    <link rel="stylesheet" href="/static/css/categories.css">
+    <link rel="stylesheet" href="/static/annotator.touch.css">
+    
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-dark navbar-fixed-top bg-inverse">
+      <button type="button" class="navbar-toggler hidden-sm-up" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation"></button>
+      <a class="navbar-brand" href="#">ArguPod</a>
+
+        {% if username %}
+        <nav class="nav navbar-nav float-xs-right">
+          <a class="nav-item nav-link" href="/logout">Logout: {{username}}</a>
+        </nav>
+        {% endif %}
+
+        {% if role|string() == "student" %}
+            <nav class="nav navbar-nav float-xs-left">
+                <span class="nav-item nav-link">Student</a>
+            </nav>
+        {% elif role|string() == "teacher" %}
+            <nav class="nav navbar-nav float-xs-left">
+                <span class="nav-item nav-link">Teacher</a>
+            </nav>
+        {% endif %}
+            
+    </nav>
