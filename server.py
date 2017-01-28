@@ -69,6 +69,10 @@ def notify(pid):
     
     return str("Not found")
 
+@app.route("/view/<pid>")
+def view(pid):
+    return render_template('results.html')
+
 #http://pharma-c.me/answer/1/Yes
 @app.route("/answer/<pid>/<qid>/<ans>")
 def answer(pid, qid, ans):
@@ -76,10 +80,9 @@ def answer(pid, qid, ans):
     collection = database.responses
     date = time.time()
     
-    p = collection.Response.find_and_modify(
-        query={"time": date, "pid": str(pid)},
-        update={"$set": {"time": time, "pid": str(pid), "question": qid, "answer": ans}
-    }, new=True, upsert=True)
+    p = collection.Response.save(
+        {"time": time, "pid": str(pid), "question": str(qid), "answer": str(ans)}
+    )
 
     return str("Thanks")
 
