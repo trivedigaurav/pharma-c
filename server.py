@@ -5,7 +5,7 @@ from bson.objectid import ObjectId
 from jinja2 import evalcontextfilter, Markup, escape
 from api import *
 from questions import *
-import random
+import random, time
 
 app = Flask(__name__)
 app.secret_key = '80e48d13643b4b2f53663be3967bcc76' #pharma-c
