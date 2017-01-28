@@ -59,7 +59,7 @@ def notify(pid):
         message = questions[randomQ]
         message += "\n"
         for a in ans:
-            message += "<a href=\"http://pharma-c.me/answer/"+ str(randomQ) +"/"+ a + "\">" + a + "</a> \n"
+            message += "<a href=\"http://pharma-c.me/answer/" + pid + "/ " + str(randomQ) +"/"+ a + "\">" + a + "</a> \n"
 
         print message
 

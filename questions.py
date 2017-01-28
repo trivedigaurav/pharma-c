@@ -5,7 +5,7 @@ questions = [
 ]
 
 answers = [
-	["0to3", "4to6", "6plus"],
+	["0 to 3", "4 to 6", "6 plus"],
 	["Yes", "No"],
 	["Yes", "No"]
 ]
