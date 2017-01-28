@@ -78,11 +78,15 @@ def view(pid):
 def answer(pid, qid, ans):
 
     collection = database.responses
-    date = time.time()
     
-    p = collection.Response.save(
-        {"time": time, "pid": str(pid), "question": str(qid), "answer": str(ans)}
-    )
+    p = collection.Response()
+
+    p["time"] = time.time()
+    p["pid"] = unicode(pid)
+    p["question"] = unicode(qid)
+    p["answer"] = unicode(ans)
+    
+    p.save()
 
     return str("Thanks")
 
