@@ -63,7 +63,7 @@ def notify(pid):
 
         print message
 
-        send_notification("Quick Question", message, "tel:1-800-PHARMA-C", "Call your pharmacist!")
+        send_notification("Quick Question", message, "tel:1-800-PHARMA-C", "Call my pharmacist!")
 
         return str("Notified")
     
