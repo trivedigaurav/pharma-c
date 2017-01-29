@@ -65,7 +65,7 @@ def notify(pid):
 
         send_notification("Quick Question", message, "tel:1-800-PHARMA-C", "Call my pharmacist!")
 
-        return str("Notified")
+        return render_template("notified.html")
     
     return str("Not found")
 
